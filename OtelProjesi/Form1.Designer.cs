@@ -41,6 +41,8 @@
             this.btnTelefonTanim = new DevExpress.XtraBars.BarButtonItem();
             this.btnUlkeTanim = new DevExpress.XtraBars.BarButtonItem();
             this.btnUrunGrupTanim = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPersonelListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnPersonelKart = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -73,9 +75,11 @@
             this.btnOdaTanim,
             this.btnTelefonTanim,
             this.btnUlkeTanim,
-            this.btnUrunGrupTanim});
+            this.btnUrunGrupTanim,
+            this.btnPersonelListesi,
+            this.btnPersonelKart});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 13;
+            this.ribbonControl1.MaxItemId = 15;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategoryAlignment = DevExpress.XtraBars.Ribbon.RibbonPageCategoryAlignment.Left;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -191,6 +195,23 @@
             this.btnUrunGrupTanim.Name = "btnUrunGrupTanim";
             this.btnUrunGrupTanim.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunGrupTanim_ItemClick);
             // 
+            // btnPersonelListesi
+            // 
+            this.btnPersonelListesi.Caption = "Personel Listesi";
+            this.btnPersonelListesi.Id = 13;
+            this.btnPersonelListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelListesi.ImageOptions.Image")));
+            this.btnPersonelListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPersonelListesi.ImageOptions.LargeImage")));
+            this.btnPersonelListesi.Name = "btnPersonelListesi";
+            // 
+            // btnPersonelKart
+            // 
+            this.btnPersonelKart.Caption = "Personel Kartı";
+            this.btnPersonelKart.Id = 14;
+            this.btnPersonelKart.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnPersonelKart.ImageOptions.Image")));
+            this.btnPersonelKart.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnPersonelKart.ImageOptions.LargeImage")));
+            this.btnPersonelKart.Name = "btnPersonelKart";
+            this.btnPersonelKart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnPersonelKart_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -223,8 +244,9 @@
             // 
             // ribbonPageGroup3
             // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonelListesi);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnPersonelKart);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            this.ribbonPageGroup3.Text = "ribbonPageGroup3";
             // 
             // ribbonPage4
             // 
@@ -334,6 +356,8 @@
         private DevExpress.XtraBars.BarButtonItem btnTelefonTanim;
         private DevExpress.XtraBars.BarButtonItem btnUlkeTanim;
         private DevExpress.XtraBars.BarButtonItem btnUrunGrupTanim;
+        private DevExpress.XtraBars.BarButtonItem btnPersonelListesi;
+        private DevExpress.XtraBars.BarButtonItem btnPersonelKart;
     }
 }
 

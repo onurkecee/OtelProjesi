@@ -127,6 +127,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Personel\FrmPersonelKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Personel\FrmPersonelKart.Designer.cs">
+      <DependentUpon>FrmPersonelKart.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Tanımlamalar\FrmBirim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +198,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Personel\FrmPersonelKart.resx">
+      <DependentUpon>FrmPersonelKart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmBirim.resx">
       <DependentUpon>FrmBirim.cs</DependentUpon>
     </EmbeddedResource>
@@ -231,6 +240,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EntityDeploy Include="Entity\Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -264,6 +274,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\locknavigation_32x32.png" />
+    <None Include="Resources\calendar_32x32.png" />
+    <None Include="Resources\today_32x32.png" />
+    <None Include="Resources\edittask_32x32.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
