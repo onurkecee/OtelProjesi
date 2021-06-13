@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="353bc7df41a846e9810ba0152f9e2b49" Name="Diagram1">
+        <EntityTypeShape EntityType="DbOtelModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLBIRIM" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLDEPARTMAN" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLDURUM" Width="1.5" PointX="0.75" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLGOREV" Width="1.5" PointX="5.25" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLKASA" Width="1.5" PointX="3" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLKUR" Width="1.5" PointX="3" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLMISAFIR" Width="1.5" PointX="3" PointY="15.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLODA" Width="1.5" PointX="3" PointY="19.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLPERSONEL" Width="1.5" PointX="7.5" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLTELEFON" Width="1.5" PointX="3" PointY="23" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLULKE" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLURUN" Width="1.5" PointX="5.25" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLURUNGRUP" Width="1.5" PointX="3" PointY="25.75" IsExpanded="true" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLBIRIM_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLURUN_TBLBIRIM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLDEPARTMAN_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLGOREV_TBLDEPARTMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLPERSONEL_TBLDEPARTMAN" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLGOREV_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLKASA_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLKUR_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLMISAFIR_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLODA_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLPERSONEL_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLTELEFON_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLURUN_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLURUNGRUP_TBLDURUM" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLPERSONEL_TBLGOREV" ManuallyRouted="false" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLURUN_TBLURUNGRUP" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

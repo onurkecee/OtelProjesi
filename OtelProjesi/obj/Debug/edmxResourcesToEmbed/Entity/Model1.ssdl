@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TBLBIRIM">
+    <Key>
+      <PropertyRef Name="BIRIMID" />
+    </Key>
+    <Property Name="BIRIMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BIRIMAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLDEPARTMAN">
+    <Key>
+      <PropertyRef Name="DEPARTMANID" />
+    </Key>
+    <Property Name="DEPARTMANID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DEPARTMANAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="TELEFON" Type="nvarchar" MaxLength="50" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLDURUM">
+    <Key>
+      <PropertyRef Name="DURUMID" />
+    </Key>
+    <Property Name="DURUMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DURUMAD" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLGOREV">
+    <Key>
+      <PropertyRef Name="GOREVID" />
+    </Key>
+    <Property Name="GOREVID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GOREVAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEPARTMAN" Type="int" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLKASA">
+    <Key>
+      <PropertyRef Name="KASAID" />
+    </Key>
+    <Property Name="KASAID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KASAAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="BAKIYE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="GIREN" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="CIKAN" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLKUR">
+    <Key>
+      <PropertyRef Name="KURID" />
+    </Key>
+    <Property Name="KURID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KURAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="SEMBOL" Type="nvarchar" MaxLength="50" />
+    <Property Name="DEGER" Type="decimal" Precision="18" Scale="4" />
+    <Property Name="TARIH" Type="date" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLMISAFIR">
+    <Key>
+      <PropertyRef Name="MISAFIRID" />
+    </Key>
+    <Property Name="MISAFIRID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADSOYAD" Type="nvarchar" MaxLength="100" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="MAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="TELEFON" Type="nvarchar" MaxLength="50" />
+    <Property Name="ADRES" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="50" />
+    <Property Name="KIMLIKFOTO1" Type="nvarchar" MaxLength="50" />
+    <Property Name="KIMLIKFOTO2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ULKE" Type="int" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLODA">
+    <Key>
+      <PropertyRef Name="ODAID" />
+    </Key>
+    <Property Name="ODAID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ODANUMARASI" Type="char" MaxLength="3" />
+    <Property Name="KAT" Type="nvarchar" MaxLength="2" />
+    <Property Name="KAPASITE" Type="char" MaxLength="1" />
+    <Property Name="ACIKLAMA" Type="nvarchar(max)" />
+    <Property Name="TELEFON" Type="nvarchar" MaxLength="50" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLPERSONEL">
+    <Key>
+      <PropertyRef Name="PERSONELID" />
+    </Key>
+    <Property Name="PERSONELID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ADSOYAD" Type="nvarchar" MaxLength="100" />
+    <Property Name="TC" Type="char" MaxLength="11" />
+    <Property Name="ADRES" Type="nvarchar" MaxLength="250" />
+    <Property Name="TELEFON" Type="nvarchar" MaxLength="50" />
+    <Property Name="MAIL" Type="nvarchar" MaxLength="50" />
+    <Property Name="ISEGIRISTARIH" Type="date" />
+    <Property Name="ISCIKISTARIH" Type="date" />
+    <Property Name="DEPARTMAN" Type="int" />
+    <Property Name="GOREV" Type="int" />
+    <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="250" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLTELEFON">
+    <Key>
+      <PropertyRef Name="TELEFONID" />
+    </Key>
+    <Property Name="TELEFONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="50" />
+    <Property Name="TELEFON" Type="nvarchar" MaxLength="50" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLULKE">
+    <Key>
+      <PropertyRef Name="ULKEID" />
+    </Key>
+    <Property Name="ULKEID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ULKEAD" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TBLURUN">
+    <Key>
+      <PropertyRef Name="URUNID" />
+    </Key>
+    <Property Name="URUNID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUNAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="URUNGRUP" Type="int" />
+    <Property Name="URUNBIRIM" Type="int" />
+    <Property Name="URUNFIYAT" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TOPLAM" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="KDV" Type="tinyint" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <EntityType Name="TBLURUNGRUP">
+    <Key>
+      <PropertyRef Name="URUNGRUPID" />
+    </Key>
+    <Property Name="URUNGRUPID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUNGRUPAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
+  <Association Name="FK_TBLBIRIM_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLBIRIM" Type="Self.TBLBIRIM" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLBIRIM">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLDEPARTMAN_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLDEPARTMAN" Type="Self.TBLDEPARTMAN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLDEPARTMAN">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLGOREV_TBLDEPARTMAN">
+    <End Role="TBLDEPARTMAN" Type="Self.TBLDEPARTMAN" Multiplicity="0..1" />
+    <End Role="TBLGOREV" Type="Self.TBLGOREV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDEPARTMAN">
+        <PropertyRef Name="DEPARTMANID" />
+      </Principal>
+      <Dependent Role="TBLGOREV">
+        <PropertyRef Name="DEPARTMAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLGOREV_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLGOREV" Type="Self.TBLGOREV" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLGOREV">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLKASA_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLKASA" Type="Self.TBLKASA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLKASA">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLKUR_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLKUR" Type="Self.TBLKUR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLKUR">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMISAFIR_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLMISAFIR" Type="Self.TBLMISAFIR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLMISAFIR">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLODA_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLODA" Type="Self.TBLODA" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLODA">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERSONEL_TBLDEPARTMAN">
+    <End Role="TBLDEPARTMAN" Type="Self.TBLDEPARTMAN" Multiplicity="0..1" />
+    <End Role="TBLPERSONEL" Type="Self.TBLPERSONEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDEPARTMAN">
+        <PropertyRef Name="DEPARTMANID" />
+      </Principal>
+      <Dependent Role="TBLPERSONEL">
+        <PropertyRef Name="DEPARTMAN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERSONEL_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLPERSONEL" Type="Self.TBLPERSONEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLPERSONEL">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLPERSONEL_TBLGOREV">
+    <End Role="TBLGOREV" Type="Self.TBLGOREV" Multiplicity="0..1" />
+    <End Role="TBLPERSONEL" Type="Self.TBLPERSONEL" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLGOREV">
+        <PropertyRef Name="GOREVID" />
+      </Principal>
+      <Dependent Role="TBLPERSONEL">
+        <PropertyRef Name="GOREV" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLTELEFON_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLTELEFON" Type="Self.TBLTELEFON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLTELEFON">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLURUN_TBLBIRIM">
+    <End Role="TBLBIRIM" Type="Self.TBLBIRIM" Multiplicity="0..1" />
+    <End Role="TBLURUN" Type="Self.TBLURUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLBIRIM">
+        <PropertyRef Name="BIRIMID" />
+      </Principal>
+      <Dependent Role="TBLURUN">
+        <PropertyRef Name="URUNBIRIM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLURUN_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLURUN" Type="Self.TBLURUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLURUN">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLURUN_TBLURUNGRUP">
+    <End Role="TBLURUNGRUP" Type="Self.TBLURUNGRUP" Multiplicity="0..1" />
+    <End Role="TBLURUN" Type="Self.TBLURUN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLURUNGRUP">
+        <PropertyRef Name="URUNGRUPID" />
+      </Principal>
+      <Dependent Role="TBLURUN">
+        <PropertyRef Name="URUNGRUP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLURUNGRUP_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLURUNGRUP" Type="Self.TBLURUNGRUP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLURUNGRUP">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="DbOtelModelStoreContainer">
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLBIRIM" EntityType="Self.TBLBIRIM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLDEPARTMAN" EntityType="Self.TBLDEPARTMAN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLDURUM" EntityType="Self.TBLDURUM" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLGOREV" EntityType="Self.TBLGOREV" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLKASA" EntityType="Self.TBLKASA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLKUR" EntityType="Self.TBLKUR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLMISAFIR" EntityType="Self.TBLMISAFIR" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLODA" EntityType="Self.TBLODA" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLPERSONEL" EntityType="Self.TBLPERSONEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLTELEFON" EntityType="Self.TBLTELEFON" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLULKE" EntityType="Self.TBLULKE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLURUN" EntityType="Self.TBLURUN" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLURUNGRUP" EntityType="Self.TBLURUNGRUP" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TBLBIRIM_TBLDURUM" Association="Self.FK_TBLBIRIM_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLBIRIM" EntitySet="TBLBIRIM" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLDEPARTMAN_TBLDURUM" Association="Self.FK_TBLDEPARTMAN_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLDEPARTMAN" EntitySet="TBLDEPARTMAN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLGOREV_TBLDEPARTMAN" Association="Self.FK_TBLGOREV_TBLDEPARTMAN">
+      <End Role="TBLDEPARTMAN" EntitySet="TBLDEPARTMAN" />
+      <End Role="TBLGOREV" EntitySet="TBLGOREV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLGOREV_TBLDURUM" Association="Self.FK_TBLGOREV_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLGOREV" EntitySet="TBLGOREV" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLKASA_TBLDURUM" Association="Self.FK_TBLKASA_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLKASA" EntitySet="TBLKASA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLKUR_TBLDURUM" Association="Self.FK_TBLKUR_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLKUR" EntitySet="TBLKUR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMISAFIR_TBLDURUM" Association="Self.FK_TBLMISAFIR_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLODA_TBLDURUM" Association="Self.FK_TBLODA_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLODA" EntitySet="TBLODA" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERSONEL_TBLDEPARTMAN" Association="Self.FK_TBLPERSONEL_TBLDEPARTMAN">
+      <End Role="TBLDEPARTMAN" EntitySet="TBLDEPARTMAN" />
+      <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERSONEL_TBLDURUM" Association="Self.FK_TBLPERSONEL_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLPERSONEL_TBLGOREV" Association="Self.FK_TBLPERSONEL_TBLGOREV">
+      <End Role="TBLGOREV" EntitySet="TBLGOREV" />
+      <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLTELEFON_TBLDURUM" Association="Self.FK_TBLTELEFON_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLTELEFON" EntitySet="TBLTELEFON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLURUN_TBLBIRIM" Association="Self.FK_TBLURUN_TBLBIRIM">
+      <End Role="TBLBIRIM" EntitySet="TBLBIRIM" />
+      <End Role="TBLURUN" EntitySet="TBLURUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLURUN_TBLDURUM" Association="Self.FK_TBLURUN_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLURUN" EntitySet="TBLURUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLURUN_TBLURUNGRUP" Association="Self.FK_TBLURUN_TBLURUNGRUP">
+      <End Role="TBLURUNGRUP" EntitySet="TBLURUNGRUP" />
+      <End Role="TBLURUN" EntitySet="TBLURUN" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLURUNGRUP_TBLDURUM" Association="Self.FK_TBLURUNGRUP_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLURUNGRUP" EntitySet="TBLURUNGRUP" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
