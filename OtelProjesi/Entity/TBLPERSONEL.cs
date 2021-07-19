@@ -26,6 +26,10 @@ namespace OtelProjesi.Entity
         public Nullable<int> GOREV { get; set; }
         public string ACIKLAMA { get; set; }
         public Nullable<int> DURUM { get; set; }
+        public string KIMLIKON { get; set; }
+        public string KIMLIKARKA { get; set; }
+        public string SIFRE { get; set; }
+        public string YETKI { get; set; }
     
         public virtual TBLDEPARTMAN TBLDEPARTMAN { get; set; }
         public virtual TBLDURUM TBLDURUM { get; set; }

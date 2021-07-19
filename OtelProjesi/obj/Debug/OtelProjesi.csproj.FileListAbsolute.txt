@@ -106,3 +106,4 @@ C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\bin\Debug\DevExpress.Mvvm.v18
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Tanımlamalar.FrmUlke.resources
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Tanımlamalar.FrmUrunGrup.resources
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Personel.FrmPersonelKart.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Personel.FrmPersonelListesi.resources

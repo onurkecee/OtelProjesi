@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -113,6 +113,10 @@
           <Property Name="DEPARTMAN" Type="int" />
           <Property Name="GOREV" Type="int" />
           <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="250" />
+          <Property Name="KIMLIKON" Type="nvarchar" MaxLength="250" />
+          <Property Name="KIMLIKARKA" Type="nvarchar" MaxLength="250" />
+          <Property Name="SIFRE" Type="nvarchar" MaxLength="20" />
+          <Property Name="YETKI" Type="char" MaxLength="1" />
           <Property Name="DURUM" Type="int" />
         </EntityType>
         <EntityType Name="TBLTELEFON">
@@ -424,8 +428,7 @@
             <End Role="TBLURUNGRUP" EntitySet="TBLURUNGRUP" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DbOtelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -564,6 +567,10 @@
           <NavigationProperty Name="TBLDEPARTMAN" Relationship="Self.FK_TBLPERSONEL_TBLDEPARTMAN" FromRole="TBLPERSONEL" ToRole="TBLDEPARTMAN" />
           <NavigationProperty Name="TBLDURUM" Relationship="Self.FK_TBLPERSONEL_TBLDURUM" FromRole="TBLPERSONEL" ToRole="TBLDURUM" />
           <NavigationProperty Name="TBLGOREV" Relationship="Self.FK_TBLPERSONEL_TBLGOREV" FromRole="TBLPERSONEL" ToRole="TBLGOREV" />
+          <Property Name="KIMLIKON" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="KIMLIKARKA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="SIFRE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="YETKI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
         </EntityType>
         <EntityType Name="TBLTELEFON">
           <Key>
@@ -991,6 +998,10 @@
           <EntitySetMapping Name="TBLPERSONEL">
             <EntityTypeMapping TypeName="DbOtelModel.TBLPERSONEL">
               <MappingFragment StoreEntitySet="TBLPERSONEL">
+                <ScalarProperty Name="YETKI" ColumnName="YETKI" />
+                <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+                <ScalarProperty Name="KIMLIKARKA" ColumnName="KIMLIKARKA" />
+                <ScalarProperty Name="KIMLIKON" ColumnName="KIMLIKON" />
                 <ScalarProperty Name="PERSONELID" ColumnName="PERSONELID" />
                 <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
                 <ScalarProperty Name="TC" ColumnName="TC" />

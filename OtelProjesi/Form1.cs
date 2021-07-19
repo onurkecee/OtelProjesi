@@ -87,5 +87,12 @@ namespace OtelProjesi
             Formlar.Personel.FrmPersonelKart frm = new Formlar.Personel.FrmPersonelKart();
             frm.Show();
         }
+
+        private void btnPersonelListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Personel.FrmPersonelListesi frm = new Formlar.Personel.FrmPersonelListesi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

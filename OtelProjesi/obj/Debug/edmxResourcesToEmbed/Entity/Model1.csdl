@@ -135,6 +135,10 @@
     <NavigationProperty Name="TBLDEPARTMAN" Relationship="Self.FK_TBLPERSONEL_TBLDEPARTMAN" FromRole="TBLPERSONEL" ToRole="TBLDEPARTMAN" />
     <NavigationProperty Name="TBLDURUM" Relationship="Self.FK_TBLPERSONEL_TBLDURUM" FromRole="TBLPERSONEL" ToRole="TBLDURUM" />
     <NavigationProperty Name="TBLGOREV" Relationship="Self.FK_TBLPERSONEL_TBLGOREV" FromRole="TBLPERSONEL" ToRole="TBLGOREV" />
+    <Property Name="KIMLIKON" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="KIMLIKARKA" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SIFRE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="YETKI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
   </EntityType>
   <EntityType Name="TBLTELEFON">
     <Key>

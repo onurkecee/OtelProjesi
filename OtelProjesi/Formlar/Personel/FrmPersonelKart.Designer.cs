@@ -54,6 +54,7 @@
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.btnGuncelle = new DevExpress.XtraEditors.SimpleButton();
             this.btnKaydet = new DevExpress.XtraEditors.SimpleButton();
             this.btnVazgec = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
@@ -88,6 +89,8 @@
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.pictureEdit14 = new DevExpress.XtraEditors.PictureEdit();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.lblKimlikOn = new DevExpress.XtraEditors.LabelControl();
+            this.lblKimlikArka = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdSoyad.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lookUpEditDepartman.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
@@ -412,6 +415,7 @@
             // 
             // groupControl2
             // 
+            this.groupControl2.Controls.Add(this.btnGuncelle);
             this.groupControl2.Controls.Add(this.btnKaydet);
             this.groupControl2.Controls.Add(this.btnVazgec);
             this.groupControl2.Location = new System.Drawing.Point(4, 243);
@@ -421,10 +425,20 @@
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "groupControl2";
             // 
+            // btnGuncelle
+            // 
+            this.btnGuncelle.ImageOptions.Image = global::OtelProjesi.Properties.Resources.refreshallpivottable_32x32;
+            this.btnGuncelle.Location = new System.Drawing.Point(219, 5);
+            this.btnGuncelle.Name = "btnGuncelle";
+            this.btnGuncelle.Size = new System.Drawing.Size(124, 36);
+            this.btnGuncelle.TabIndex = 2;
+            this.btnGuncelle.Text = "Güncelle";
+            this.btnGuncelle.Click += new System.EventHandler(this.btnGuncelle_Click);
+            // 
             // btnKaydet
             // 
             this.btnKaydet.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnKaydet.ImageOptions.Image")));
-            this.btnKaydet.Location = new System.Drawing.Point(215, 5);
+            this.btnKaydet.Location = new System.Drawing.Point(349, 5);
             this.btnKaydet.Name = "btnKaydet";
             this.btnKaydet.Size = new System.Drawing.Size(124, 36);
             this.btnKaydet.TabIndex = 1;
@@ -434,7 +448,7 @@
             // btnVazgec
             // 
             this.btnVazgec.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnVazgec.ImageOptions.Image")));
-            this.btnVazgec.Location = new System.Drawing.Point(345, 5);
+            this.btnVazgec.Location = new System.Drawing.Point(91, 5);
             this.btnVazgec.Name = "btnVazgec";
             this.btnVazgec.Size = new System.Drawing.Size(124, 36);
             this.btnVazgec.TabIndex = 0;
@@ -515,6 +529,8 @@
             // 
             // groupControl3
             // 
+            this.groupControl3.Controls.Add(this.lblKimlikArka);
+            this.groupControl3.Controls.Add(this.lblKimlikOn);
             this.groupControl3.Controls.Add(this.txtAdres);
             this.groupControl3.Controls.Add(this.labelControl10);
             this.groupControl3.Controls.Add(this.pictureEdit10);
@@ -581,6 +597,7 @@
             this.pictureArka.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureArka.Size = new System.Drawing.Size(211, 91);
             this.pictureArka.TabIndex = 1;
+            this.pictureArka.EditValueChanged += new System.EventHandler(this.pictureArka_EditValueChanged);
             // 
             // pictureOn
             // 
@@ -590,6 +607,7 @@
             this.pictureOn.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
             this.pictureOn.Size = new System.Drawing.Size(211, 91);
             this.pictureOn.TabIndex = 0;
+            this.pictureOn.EditValueChanged += new System.EventHandler(this.pictureOn_EditValueChanged);
             // 
             // groupControl6
             // 
@@ -775,6 +793,24 @@
             this.radioButton1.Text = "Yetki 1";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
+            // lblKimlikOn
+            // 
+            this.lblKimlikOn.Location = new System.Drawing.Point(7, 68);
+            this.lblKimlikOn.Name = "lblKimlikOn";
+            this.lblKimlikOn.Size = new System.Drawing.Size(69, 13);
+            this.lblKimlikOn.TabIndex = 9;
+            this.lblKimlikOn.Text = "labelControl15";
+            this.lblKimlikOn.Visible = false;
+            // 
+            // lblKimlikArka
+            // 
+            this.lblKimlikArka.Location = new System.Drawing.Point(7, 87);
+            this.lblKimlikArka.Name = "lblKimlikArka";
+            this.lblKimlikArka.Size = new System.Drawing.Size(69, 13);
+            this.lblKimlikArka.TabIndex = 10;
+            this.lblKimlikArka.Text = "labelControl15";
+            this.lblKimlikArka.Visible = false;
+            // 
             // FrmPersonelKart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -913,5 +949,8 @@
         private System.Windows.Forms.RadioButton radioButton1;
         private DevExpress.XtraEditors.DateEdit dateCikis;
         private DevExpress.XtraEditors.DateEdit dateEditGiris;
+        private DevExpress.XtraEditors.SimpleButton btnGuncelle;
+        private DevExpress.XtraEditors.LabelControl lblKimlikOn;
+        private DevExpress.XtraEditors.LabelControl lblKimlikArka;
     }
 }

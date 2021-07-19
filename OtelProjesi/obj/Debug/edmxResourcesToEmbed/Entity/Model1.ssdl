@@ -108,6 +108,10 @@
     <Property Name="DEPARTMAN" Type="int" />
     <Property Name="GOREV" Type="int" />
     <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="250" />
+    <Property Name="KIMLIKON" Type="nvarchar" MaxLength="250" />
+    <Property Name="KIMLIKARKA" Type="nvarchar" MaxLength="250" />
+    <Property Name="SIFRE" Type="nvarchar" MaxLength="20" />
+    <Property Name="YETKI" Type="char" MaxLength="1" />
     <Property Name="DURUM" Type="int" />
   </EntityType>
   <EntityType Name="TBLTELEFON">

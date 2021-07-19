@@ -106,6 +106,10 @@
     <EntitySetMapping Name="TBLPERSONEL">
       <EntityTypeMapping TypeName="DbOtelModel.TBLPERSONEL">
         <MappingFragment StoreEntitySet="TBLPERSONEL">
+          <ScalarProperty Name="YETKI" ColumnName="YETKI" />
+          <ScalarProperty Name="SIFRE" ColumnName="SIFRE" />
+          <ScalarProperty Name="KIMLIKARKA" ColumnName="KIMLIKARKA" />
+          <ScalarProperty Name="KIMLIKON" ColumnName="KIMLIKON" />
           <ScalarProperty Name="PERSONELID" ColumnName="PERSONELID" />
           <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
           <ScalarProperty Name="TC" ColumnName="TC" />

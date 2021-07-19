@@ -133,6 +133,12 @@
     <Compile Include="Formlar\Personel\FrmPersonelKart.Designer.cs">
       <DependentUpon>FrmPersonelKart.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Personel\FrmPersonelListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Personel\FrmPersonelListesi.Designer.cs">
+      <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Tanımlamalar\FrmBirim.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Personel\FrmPersonelKart.resx">
       <DependentUpon>FrmPersonelKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Personel\FrmPersonelListesi.resx">
+      <DependentUpon>FrmPersonelListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmBirim.resx">
       <DependentUpon>FrmBirim.cs</DependentUpon>
@@ -275,6 +284,7 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\refreshallpivottable_32x32.png" />
     <None Include="Resources\locknavigation_32x32.png" />
     <None Include="Resources\calendar_32x32.png" />
     <None Include="Resources\today_32x32.png" />
