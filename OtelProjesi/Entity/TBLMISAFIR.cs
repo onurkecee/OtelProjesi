@@ -25,7 +25,11 @@ namespace OtelProjesi.Entity
         public string KIMLIKFOTO2 { get; set; }
         public Nullable<int> ULKE { get; set; }
         public Nullable<int> DURUM { get; set; }
+        public Nullable<int> SEHIR { get; set; }
+        public Nullable<int> ILCE { get; set; }
     
         public virtual TBLDURUM TBLDURUM { get; set; }
+        public virtual ilceler ilceler { get; set; }
+        public virtual iller iller { get; set; }
     }
 }

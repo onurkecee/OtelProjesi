@@ -35,6 +35,11 @@
         <AssociationConnector Association="DbOtelModel.FK_TBLURUNGRUP_TBLDURUM" ManuallyRouted="false" />
         <AssociationConnector Association="DbOtelModel.FK_TBLPERSONEL_TBLGOREV" ManuallyRouted="false" />
         <AssociationConnector Association="DbOtelModel.FK_TBLURUN_TBLURUNGRUP" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DbOtelModel.ilceler" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="DbOtelModel.iller" Width="1.5" PointX="5.375" PointY="3.75" />
+        <AssociationConnector Association="DbOtelModel.FK_ilceler_iller" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLMISAFIR_ilceler" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLMISAFIR_iller" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -76,6 +76,8 @@
     <EntitySetMapping Name="TBLMISAFIR">
       <EntityTypeMapping TypeName="DbOtelModel.TBLMISAFIR">
         <MappingFragment StoreEntitySet="TBLMISAFIR">
+          <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+          <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
           <ScalarProperty Name="MISAFIRID" ColumnName="MISAFIRID" />
           <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
           <ScalarProperty Name="TC" ColumnName="TC" />
@@ -163,6 +165,23 @@
           <ScalarProperty Name="URUNGRUPID" ColumnName="URUNGRUPID" />
           <ScalarProperty Name="URUNGRUPAD" ColumnName="URUNGRUPAD" />
           <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ilceler">
+      <EntityTypeMapping TypeName="DbOtelModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="ilce" ColumnName="ilce" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="iller">
+      <EntityTypeMapping TypeName="DbOtelModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="sehir" ColumnName="sehir" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

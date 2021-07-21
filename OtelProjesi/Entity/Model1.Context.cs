@@ -39,5 +39,7 @@ namespace OtelProjesi.Entity
         public virtual DbSet<TBLULKE> TBLULKE { get; set; }
         public virtual DbSet<TBLURUN> TBLURUN { get; set; }
         public virtual DbSet<TBLURUNGRUP> TBLURUNGRUP { get; set; }
+        public virtual DbSet<ilceler> ilceler { get; set; }
+        public virtual DbSet<iller> iller { get; set; }
     }
 }

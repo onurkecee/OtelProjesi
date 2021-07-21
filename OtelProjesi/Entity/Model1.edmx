@@ -5,6 +5,21 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="DbOtelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ilceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="ilce" Type="nvarchar" MaxLength="255" />
+          <Property Name="sehir" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="iller">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="sehir" Type="nvarchar" MaxLength="255" />
+        </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -84,6 +99,8 @@
           <Property Name="KIMLIKFOTO1" Type="nvarchar" MaxLength="50" />
           <Property Name="KIMLIKFOTO2" Type="nvarchar" MaxLength="50" />
           <Property Name="ULKE" Type="int" />
+          <Property Name="SEHIR" Type="int" />
+          <Property Name="ILCE" Type="int" />
           <Property Name="DURUM" Type="int" />
         </EntityType>
         <EntityType Name="TBLODA">
@@ -156,6 +173,18 @@
           <Property Name="URUNGRUPAD" Type="nvarchar" MaxLength="50" />
           <Property Name="DURUM" Type="int" />
         </EntityType>
+        <Association Name="FK_ilceler_iller">
+          <End Role="iller" Type="Self.iller" Multiplicity="1" />
+          <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ilceler">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TBLBIRIM_TBLDURUM">
           <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
           <End Role="TBLBIRIM" Type="Self.TBLBIRIM" Multiplicity="*" />
@@ -225,6 +254,30 @@
             </Principal>
             <Dependent Role="TBLKUR">
               <PropertyRef Name="DURUM" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLMISAFIR_ilceler">
+          <End Role="ilceler" Type="Self.ilceler" Multiplicity="0..1" />
+          <End Role="TBLMISAFIR" Type="Self.TBLMISAFIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilceler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLMISAFIR">
+              <PropertyRef Name="ILCE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLMISAFIR_iller">
+          <End Role="iller" Type="Self.iller" Multiplicity="0..1" />
+          <End Role="TBLMISAFIR" Type="Self.TBLMISAFIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLMISAFIR">
+              <PropertyRef Name="SEHIR" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -349,6 +402,8 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="DbOtelModelStoreContainer">
+          <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLBIRIM" EntityType="Self.TBLBIRIM" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLDEPARTMAN" EntityType="Self.TBLDEPARTMAN" Schema="dbo" store:Type="Tables" />
@@ -363,6 +418,10 @@
           <EntitySet Name="TBLULKE" EntityType="Self.TBLULKE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLURUN" EntityType="Self.TBLURUN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLURUNGRUP" EntityType="Self.TBLURUNGRUP" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
+            <End Role="iller" EntitySet="iller" />
+            <End Role="ilceler" EntitySet="ilceler" />
+          </AssociationSet>
           <AssociationSet Name="FK_TBLBIRIM_TBLDURUM" Association="Self.FK_TBLBIRIM_TBLDURUM">
             <End Role="TBLDURUM" EntitySet="TBLDURUM" />
             <End Role="TBLBIRIM" EntitySet="TBLBIRIM" />
@@ -386,6 +445,14 @@
           <AssociationSet Name="FK_TBLKUR_TBLDURUM" Association="Self.FK_TBLKUR_TBLDURUM">
             <End Role="TBLDURUM" EntitySet="TBLDURUM" />
             <End Role="TBLKUR" EntitySet="TBLKUR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLMISAFIR_ilceler" Association="Self.FK_TBLMISAFIR_ilceler">
+            <End Role="ilceler" EntitySet="ilceler" />
+            <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLMISAFIR_iller" Association="Self.FK_TBLMISAFIR_iller">
+            <End Role="iller" EntitySet="iller" />
+            <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
           </AssociationSet>
           <AssociationSet Name="FK_TBLMISAFIR_TBLDURUM" Association="Self.FK_TBLMISAFIR_TBLDURUM">
             <End Role="TBLDURUM" EntitySet="TBLDURUM" />
@@ -534,6 +601,10 @@
           <Property Name="ULKE" Type="Int32" />
           <Property Name="DURUM" Type="Int32" />
           <NavigationProperty Name="TBLDURUM" Relationship="Self.FK_TBLMISAFIR_TBLDURUM" FromRole="TBLMISAFIR" ToRole="TBLDURUM" />
+          <Property Name="SEHIR" Type="Int32" />
+          <Property Name="ILCE" Type="Int32" />
+          <NavigationProperty Name="ilceler" Relationship="DbOtelModel.FK_TBLMISAFIR_ilceler" FromRole="TBLMISAFIR" ToRole="ilceler" />
+          <NavigationProperty Name="iller" Relationship="DbOtelModel.FK_TBLMISAFIR_iller" FromRole="TBLMISAFIR" ToRole="iller" />
         </EntityType>
         <EntityType Name="TBLODA">
           <Key>
@@ -886,7 +957,76 @@
             <End Role="TBLURUNGRUP" EntitySet="TBLURUNGRUP" />
             <End Role="TBLURUN" EntitySet="TBLURUN" />
           </AssociationSet>
+          <EntitySet Name="ilceler" EntityType="DbOtelModel.ilceler" />
+          <EntitySet Name="iller" EntityType="DbOtelModel.iller" />
+          <AssociationSet Name="FK_ilceler_iller" Association="DbOtelModel.FK_ilceler_iller">
+            <End Role="iller" EntitySet="iller" />
+            <End Role="ilceler" EntitySet="ilceler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLMISAFIR_ilceler" Association="DbOtelModel.FK_TBLMISAFIR_ilceler">
+            <End Role="ilceler" EntitySet="ilceler" />
+            <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLMISAFIR_iller" Association="DbOtelModel.FK_TBLMISAFIR_iller">
+            <End Role="iller" EntitySet="iller" />
+            <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="ilceler">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="iller" Relationship="DbOtelModel.FK_ilceler_iller" FromRole="ilceler" ToRole="iller" />
+          <NavigationProperty Name="TBLMISAFIR" Relationship="DbOtelModel.FK_TBLMISAFIR_ilceler" FromRole="ilceler" ToRole="TBLMISAFIR" />
+        </EntityType>
+        <EntityType Name="iller">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ilceler" Relationship="DbOtelModel.FK_ilceler_iller" FromRole="iller" ToRole="ilceler" />
+          <NavigationProperty Name="TBLMISAFIR" Relationship="DbOtelModel.FK_TBLMISAFIR_iller" FromRole="iller" ToRole="TBLMISAFIR" />
+        </EntityType>
+        <Association Name="FK_ilceler_iller">
+          <End Type="DbOtelModel.iller" Role="iller" Multiplicity="1" />
+          <End Type="DbOtelModel.ilceler" Role="ilceler" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ilceler">
+              <PropertyRef Name="sehir" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLMISAFIR_ilceler">
+          <End Type="DbOtelModel.ilceler" Role="ilceler" Multiplicity="0..1" />
+          <End Type="DbOtelModel.TBLMISAFIR" Role="TBLMISAFIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ilceler">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLMISAFIR">
+              <PropertyRef Name="ILCE" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TBLMISAFIR_iller">
+          <End Type="DbOtelModel.iller" Role="iller" Multiplicity="0..1" />
+          <End Type="DbOtelModel.TBLMISAFIR" Role="TBLMISAFIR" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="iller">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TBLMISAFIR">
+              <PropertyRef Name="SEHIR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -968,6 +1108,8 @@
           <EntitySetMapping Name="TBLMISAFIR">
             <EntityTypeMapping TypeName="DbOtelModel.TBLMISAFIR">
               <MappingFragment StoreEntitySet="TBLMISAFIR">
+                <ScalarProperty Name="ILCE" ColumnName="ILCE" />
+                <ScalarProperty Name="SEHIR" ColumnName="SEHIR" />
                 <ScalarProperty Name="MISAFIRID" ColumnName="MISAFIRID" />
                 <ScalarProperty Name="ADSOYAD" ColumnName="ADSOYAD" />
                 <ScalarProperty Name="TC" ColumnName="TC" />
@@ -1055,6 +1197,23 @@
                 <ScalarProperty Name="URUNGRUPID" ColumnName="URUNGRUPID" />
                 <ScalarProperty Name="URUNGRUPAD" ColumnName="URUNGRUPAD" />
                 <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ilceler">
+            <EntityTypeMapping TypeName="DbOtelModel.ilceler">
+              <MappingFragment StoreEntitySet="ilceler">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="ilce" ColumnName="ilce" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="iller">
+            <EntityTypeMapping TypeName="DbOtelModel.iller">
+              <MappingFragment StoreEntitySet="iller">
+                <ScalarProperty Name="sehir" ColumnName="sehir" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

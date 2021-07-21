@@ -94,5 +94,18 @@ namespace OtelProjesi
             frm.MdiParent = this;
             frm.Show();
         }
+
+        private void btnMisafirKart_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Misafir.FrmMisafirKart frm = new Formlar.Misafir.FrmMisafirKart();
+            frm.Show();
+        }
+
+        private void btnMisafirListesi_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Misafir.FrmMisafirListesi frm = new Formlar.Misafir.FrmMisafirListesi();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

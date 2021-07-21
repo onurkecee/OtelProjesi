@@ -102,6 +102,10 @@
     <Property Name="ULKE" Type="Int32" />
     <Property Name="DURUM" Type="Int32" />
     <NavigationProperty Name="TBLDURUM" Relationship="Self.FK_TBLMISAFIR_TBLDURUM" FromRole="TBLMISAFIR" ToRole="TBLDURUM" />
+    <Property Name="SEHIR" Type="Int32" />
+    <Property Name="ILCE" Type="Int32" />
+    <NavigationProperty Name="ilceler" Relationship="DbOtelModel.FK_TBLMISAFIR_ilceler" FromRole="TBLMISAFIR" ToRole="ilceler" />
+    <NavigationProperty Name="iller" Relationship="DbOtelModel.FK_TBLMISAFIR_iller" FromRole="TBLMISAFIR" ToRole="iller" />
   </EntityType>
   <EntityType Name="TBLODA">
     <Key>
@@ -454,5 +458,74 @@
       <End Role="TBLURUNGRUP" EntitySet="TBLURUNGRUP" />
       <End Role="TBLURUN" EntitySet="TBLURUN" />
     </AssociationSet>
+    <EntitySet Name="ilceler" EntityType="DbOtelModel.ilceler" />
+    <EntitySet Name="iller" EntityType="DbOtelModel.iller" />
+    <AssociationSet Name="FK_ilceler_iller" Association="DbOtelModel.FK_ilceler_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="ilceler" EntitySet="ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMISAFIR_ilceler" Association="DbOtelModel.FK_TBLMISAFIR_ilceler">
+      <End Role="ilceler" EntitySet="ilceler" />
+      <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLMISAFIR_iller" Association="DbOtelModel.FK_TBLMISAFIR_iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="ilce" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="sehir" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="iller" Relationship="DbOtelModel.FK_ilceler_iller" FromRole="ilceler" ToRole="iller" />
+    <NavigationProperty Name="TBLMISAFIR" Relationship="DbOtelModel.FK_TBLMISAFIR_ilceler" FromRole="ilceler" ToRole="TBLMISAFIR" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="sehir" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ilceler" Relationship="DbOtelModel.FK_ilceler_iller" FromRole="iller" ToRole="ilceler" />
+    <NavigationProperty Name="TBLMISAFIR" Relationship="DbOtelModel.FK_TBLMISAFIR_iller" FromRole="iller" ToRole="TBLMISAFIR" />
+  </EntityType>
+  <Association Name="FK_ilceler_iller">
+    <End Type="DbOtelModel.iller" Role="iller" Multiplicity="1" />
+    <End Type="DbOtelModel.ilceler" Role="ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="sehir" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMISAFIR_ilceler">
+    <End Type="DbOtelModel.ilceler" Role="ilceler" Multiplicity="0..1" />
+    <End Type="DbOtelModel.TBLMISAFIR" Role="TBLMISAFIR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilceler">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TBLMISAFIR">
+        <PropertyRef Name="ILCE" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLMISAFIR_iller">
+    <End Type="DbOtelModel.iller" Role="iller" Multiplicity="0..1" />
+    <End Type="DbOtelModel.TBLMISAFIR" Role="TBLMISAFIR" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TBLMISAFIR">
+        <PropertyRef Name="SEHIR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

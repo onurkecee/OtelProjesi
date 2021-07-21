@@ -64,6 +64,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity\ilceler.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entity\iller.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Entity\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -126,6 +132,18 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirKart.Designer.cs">
+      <DependentUpon>FrmMisafirKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Misafir\FrmMisafirListesi.Designer.cs">
+      <DependentUpon>FrmMisafirListesi.cs</DependentUpon>
     </Compile>
     <Compile Include="Formlar\Personel\FrmPersonelKart.cs">
       <SubType>Form</SubType>
@@ -204,6 +222,12 @@
     <Compile Include="Repositories\Repository.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Misafir\FrmMisafirKart.resx">
+      <DependentUpon>FrmMisafirKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Misafir\FrmMisafirListesi.resx">
+      <DependentUpon>FrmMisafirListesi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Personel\FrmPersonelKart.resx">
       <DependentUpon>FrmPersonelKart.cs</DependentUpon>
@@ -284,6 +308,10 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\usergroup_16x16.png" />
+    <None Include="Resources\usergroup_32x32.png" />
+    <None Include="Resources\home_32x32.png" />
+    <None Include="Resources\country_32x32.png" />
     <None Include="Resources\refreshallpivottable_32x32.png" />
     <None Include="Resources\locknavigation_32x32.png" />
     <None Include="Resources\calendar_32x32.png" />
