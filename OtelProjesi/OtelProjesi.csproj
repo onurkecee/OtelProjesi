@@ -127,6 +127,9 @@
     <Compile Include="Entity\TBLURUNGRUP.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Entity\TBLURUNHAREKET.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,6 +220,24 @@
     <Compile Include="Formlar\Tanımlamalar\FrmUrunGrup.Designer.cs">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunCikisHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunCikisHareket.Designer.cs">
+      <DependentUpon>FrmUrunCikisHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunGirisHareket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunGirisHareket.Designer.cs">
+      <DependentUpon>FrmUrunGirisHareket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunHareketTanimi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunHareketTanimi.Designer.cs">
+      <DependentUpon>FrmUrunHareketTanimi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formlar\Ürün\FrmUrunKart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +298,15 @@
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmUrunGrup.resx">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ürün\FrmUrunCikisHareket.resx">
+      <DependentUpon>FrmUrunCikisHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ürün\FrmUrunGirisHareket.resx">
+      <DependentUpon>FrmUrunGirisHareket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ürün\FrmUrunHareketTanimi.resx">
+      <DependentUpon>FrmUrunHareketTanimi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formlar\Ürün\FrmUrunKart.resx">
       <DependentUpon>FrmUrunKart.cs</DependentUpon>
     </EmbeddedResource>
@@ -326,6 +356,15 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\listmultilevel_32x32.png" />
+    <None Include="Resources\calendar_32x321.png" />
+    <None Include="Resources\chart_32x32.png" />
+    <None Include="Resources\newsales_16x16.png" />
+    <None Include="Resources\newsales_32x32.png" />
+    <None Include="Resources\movedown_16x16.png" />
+    <None Include="Resources\movedown_32x32.png" />
+    <None Include="Resources\moveup_16x16.png" />
+    <None Include="Resources\moveup_32x32.png" />
     <None Include="Resources\status_32x32.png" />
     <None Include="Resources\gaugestylethreeforthcircular_32x32.png" />
     <None Include="Resources\showproduct_32x32.png" />

@@ -168,6 +168,17 @@
     <Property Name="URUNGRUPAD" Type="nvarchar" MaxLength="50" />
     <Property Name="DURUM" Type="int" />
   </EntityType>
+  <EntityType Name="TBLURUNHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="URUN" Type="int" />
+    <Property Name="HAREKETTURU" Type="nvarchar" MaxLength="50" />
+    <Property Name="MIKTAR" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="TARIH" Type="date" />
+    <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="2500" />
+  </EntityType>
   <Association Name="FK_ilceler_iller">
     <End Role="iller" Type="Self.iller" Multiplicity="1" />
     <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
@@ -396,6 +407,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TBLURUNHAREKET_TBLURUN">
+    <End Role="TBLURUN" Type="Self.TBLURUN" Multiplicity="0..1" />
+    <End Role="TBLURUNHAREKET" Type="Self.TBLURUNHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLURUN">
+        <PropertyRef Name="URUNID" />
+      </Principal>
+      <Dependent Role="TBLURUNHAREKET">
+        <PropertyRef Name="URUN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="DbOtelModelStoreContainer">
     <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
@@ -413,6 +436,7 @@
     <EntitySet Name="TBLULKE" EntityType="Self.TBLULKE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLURUN" EntityType="Self.TBLURUN" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLURUNGRUP" EntityType="Self.TBLURUNGRUP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLURUNHAREKET" EntityType="Self.TBLURUNHAREKET" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
       <End Role="iller" EntitySet="iller" />
       <End Role="ilceler" EntitySet="ilceler" />
@@ -488,6 +512,10 @@
     <AssociationSet Name="FK_TBLURUNGRUP_TBLDURUM" Association="Self.FK_TBLURUNGRUP_TBLDURUM">
       <End Role="TBLDURUM" EntitySet="TBLDURUM" />
       <End Role="TBLURUNGRUP" EntitySet="TBLURUNGRUP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLURUNHAREKET_TBLURUN" Association="Self.FK_TBLURUNHAREKET_TBLURUN">
+      <End Role="TBLURUN" EntitySet="TBLURUN" />
+      <End Role="TBLURUNHAREKET" EntitySet="TBLURUNHAREKET" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

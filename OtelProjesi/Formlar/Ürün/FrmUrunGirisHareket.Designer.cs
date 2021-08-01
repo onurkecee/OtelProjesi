@@ -1,6 +1,6 @@
 ﻿namespace OtelProjesi.Formlar.Ürün
 {
-    partial class FrmUrunListesi
+    partial class FrmUrunGirisHareket
     {
         /// <summary>
         /// Required designer variable.
@@ -52,7 +52,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // FrmUrunListesi
+            // FrmUrunGirisHareket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -61,10 +61,10 @@
             this.Controls.Add(this.gridControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmUrunListesi";
+            this.Name = "FrmUrunGirisHareket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ÜRÜN LİSTESİ";
-            this.Load += new System.EventHandler(this.FrmUrunListesi_Load);
+            this.Text = "ÜRÜN GİRİŞ HAREKETLERİ";
+            this.Load += new System.EventHandler(this.FrmUrunGirisHareket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

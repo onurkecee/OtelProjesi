@@ -40,6 +40,8 @@
         <AssociationConnector Association="DbOtelModel.FK_ilceler_iller" />
         <AssociationConnector Association="DbOtelModel.FK_TBLMISAFIR_ilceler" />
         <AssociationConnector Association="DbOtelModel.FK_TBLMISAFIR_iller" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLURUNHAREKET" Width="1.5" PointX="7.5" PointY="15.5" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

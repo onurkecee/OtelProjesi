@@ -41,5 +41,6 @@ namespace OtelProjesi.Entity
         public virtual DbSet<TBLURUNGRUP> TBLURUNGRUP { get; set; }
         public virtual DbSet<ilceler> ilceler { get; set; }
         public virtual DbSet<iller> iller { get; set; }
+        public virtual DbSet<TBLURUNHAREKET> TBLURUNHAREKET { get; set; }
     }
 }

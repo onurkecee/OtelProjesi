@@ -185,5 +185,17 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TBLURUNHAREKET">
+      <EntityTypeMapping TypeName="DbOtelModel.TBLURUNHAREKET">
+        <MappingFragment StoreEntitySet="TBLURUNHAREKET">
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+          <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+          <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+          <ScalarProperty Name="HAREKETTURU" ColumnName="HAREKETTURU" />
+          <ScalarProperty Name="URUN" ColumnName="URUN" />
+          <ScalarProperty Name="HAREKETID" ColumnName="HAREKETID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

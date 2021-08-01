@@ -22,9 +22,11 @@ namespace OtelProjesi.Formlar.Ürün
 
         DbOtelEntities db = new DbOtelEntities();
         Repository<TBLURUN> repo = new Repository<TBLURUN>();
+        public int id;
 
         private void FrmUrunKart_Load(object sender, EventArgs e)
         {
+            this.Text = id.ToString();
             try
             {
                 lookUpEditUrunGrup.Properties.DataSource = (from x in db.TBLURUNGRUP
@@ -67,9 +69,22 @@ namespace OtelProjesi.Formlar.Ürün
             catch (Exception)
             {
 
-                XtraMessageBox.Show("Birim Listeleme Hatası", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                XtraMessageBox.Show("Birim Listeleme Hatası", "HATA", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
+
+            //Veri Gönderme
+            if (id != 0)
+            {
+                var urun = repo.Find(x => x.URUNID == id);
+                txtUrunAD.Text = urun.URUNAD;
+                lookUpEditUrunGrup.EditValue = urun.URUNGRUP;
+                lookUpEditBirim.EditValue = urun.URUNBIRIM;
+                txtFiyat.Text = urun.URUNFIYAT.ToString();
+                txtToplam.Text = urun.TOPLAM.ToString();
+                txtKDV.Text = urun.KDV.ToString();
+                lookUpEditDurum.EditValue = urun.DURUM;
+            }
+
         }
 
         private void btnVazgec_Click(object sender, EventArgs e)
@@ -81,7 +96,7 @@ namespace OtelProjesi.Formlar.Ürün
         {
             try
             {
-                if (txtUrunAD.Text!=""&&txtToplam.Text!=""&&txtFiyat.Text!=""&&txtKDV.Text!=""&&lookUpEditBirim.Text!=""&&lookUpEditDurum.Text!=""&&lookUpEditUrunGrup.Text!="")
+                if (txtUrunAD.Text != "" && txtToplam.Text != "" && txtFiyat.Text != "" && txtKDV.Text != "" && lookUpEditBirim.Text != "" && lookUpEditDurum.Text != "" && lookUpEditUrunGrup.Text != "")
                 {
                     TBLURUN urun = new TBLURUN();
                     urun.URUNAD = txtUrunAD.Text;
@@ -103,7 +118,41 @@ namespace OtelProjesi.Formlar.Ürün
 
                 XtraMessageBox.Show(ex.Message);
             }
-            
+
+        }
+
+        private void btnGuncelle_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult result = XtraMessageBox.Show("Ürün Bilgilerini Gerçekten Değiştirmek İstiyor Musun ?", "BİLGİLENDİRME", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (result == DialogResult.Yes)
+                {
+                    if (txtUrunAD.Text != "" && txtToplam.Text != "" && txtFiyat.Text != "" && txtKDV.Text != "" && lookUpEditBirim.Text != "" && lookUpEditDurum.Text != "" && lookUpEditUrunGrup.Text != "")
+                    {
+                        var guncelle = repo.Find(x => x.URUNID == id);
+                        guncelle.URUNAD = txtUrunAD.Text;
+                        guncelle.URUNGRUP = int.Parse(lookUpEditUrunGrup.EditValue.ToString());
+                        guncelle.URUNBIRIM = int.Parse(lookUpEditDurum.EditValue.ToString());
+                        guncelle.URUNFIYAT = decimal.Parse(txtFiyat.Text);
+                        guncelle.TOPLAM = decimal.Parse(txtToplam.Text);
+                        guncelle.KDV = byte.Parse(txtKDV.Text);
+                        repo.TUpdate(guncelle);
+                        XtraMessageBox.Show("Ürün Başarılı Bir Şekilde Değiştirildi", "BAŞARILI", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    }
+                    else
+                    {
+                        XtraMessageBox.Show("Lütfen Zorunlu Alanları Doldurunuz.", "UYARI", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+
+                XtraMessageBox.Show(ex.Message);
+            }
+
         }
     }
 }

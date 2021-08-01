@@ -1,6 +1,6 @@
 ﻿namespace OtelProjesi.Formlar.Ürün
 {
-    partial class FrmUrunListesi
+    partial class FrmUrunCikisHareket
     {
         /// <summary>
         /// Required designer variable.
@@ -41,7 +41,7 @@
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
             this.gridControl1.Size = new System.Drawing.Size(834, 450);
-            this.gridControl1.TabIndex = 0;
+            this.gridControl1.TabIndex = 1;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
@@ -52,7 +52,7 @@
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.DoubleClick += new System.EventHandler(this.gridView1_DoubleClick);
             // 
-            // FrmUrunListesi
+            // FrmUrunCikisHareket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -61,10 +61,10 @@
             this.Controls.Add(this.gridControl1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "FrmUrunListesi";
+            this.Name = "FrmUrunCikisHareket";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ÜRÜN LİSTESİ";
-            this.Load += new System.EventHandler(this.FrmUrunListesi_Load);
+            this.Text = "ÜRÜN ÇIKIŞ HAREKET";
+            this.Load += new System.EventHandler(this.FrmUrunCikisHareket_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

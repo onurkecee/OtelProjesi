@@ -120,5 +120,25 @@ namespace OtelProjesi
             Formlar.Ürün.FrmUrunKart frm = new Formlar.Ürün.FrmUrunKart();
             frm.Show();
         }
+
+        private void btnUrunGirisHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Ürün.FrmUrunGirisHareket frm = new Formlar.Ürün.FrmUrunGirisHareket();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnUrunCikisHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Ürün.FrmUrunCikisHareket frm = new Formlar.Ürün.FrmUrunCikisHareket();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void btnYeniUrunHareket_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Formlar.Ürün.FrmUrunHareketTanimi frm = new Formlar.Ürün.FrmUrunHareketTanimi();
+            frm.Show();
+        }
     }
 }

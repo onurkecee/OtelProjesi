@@ -111,3 +111,6 @@ C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Misafir.FrmMisafirListesi.resources
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunListesi.resources
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunKart.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunGirisHareket.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunCikisHareket.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunHareketTanimi.resources

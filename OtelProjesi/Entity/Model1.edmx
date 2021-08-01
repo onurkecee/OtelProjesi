@@ -173,6 +173,17 @@
           <Property Name="URUNGRUPAD" Type="nvarchar" MaxLength="50" />
           <Property Name="DURUM" Type="int" />
         </EntityType>
+        <EntityType Name="TBLURUNHAREKET">
+          <Key>
+            <PropertyRef Name="HAREKETID" />
+          </Key>
+          <Property Name="HAREKETID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="URUN" Type="int" />
+          <Property Name="HAREKETTURU" Type="nvarchar" MaxLength="50" />
+          <Property Name="MIKTAR" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TARIH" Type="date" />
+          <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="2500" />
+        </EntityType>
         <Association Name="FK_ilceler_iller">
           <End Role="iller" Type="Self.iller" Multiplicity="1" />
           <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
@@ -401,6 +412,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TBLURUNHAREKET_TBLURUN">
+          <End Role="TBLURUN" Type="Self.TBLURUN" Multiplicity="0..1" />
+          <End Role="TBLURUNHAREKET" Type="Self.TBLURUNHAREKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLURUN">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="TBLURUNHAREKET">
+              <PropertyRef Name="URUN" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="DbOtelModelStoreContainer">
           <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
@@ -418,6 +441,7 @@
           <EntitySet Name="TBLULKE" EntityType="Self.TBLULKE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLURUN" EntityType="Self.TBLURUN" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TBLURUNGRUP" EntityType="Self.TBLURUNGRUP" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TBLURUNHAREKET" EntityType="Self.TBLURUNHAREKET" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_ilceler_iller" Association="Self.FK_ilceler_iller">
             <End Role="iller" EntitySet="iller" />
             <End Role="ilceler" EntitySet="ilceler" />
@@ -493,6 +517,10 @@
           <AssociationSet Name="FK_TBLURUNGRUP_TBLDURUM" Association="Self.FK_TBLURUNGRUP_TBLDURUM">
             <End Role="TBLDURUM" EntitySet="TBLDURUM" />
             <End Role="TBLURUNGRUP" EntitySet="TBLURUNGRUP" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TBLURUNHAREKET_TBLURUN" Association="Self.FK_TBLURUNHAREKET_TBLURUN">
+            <End Role="TBLURUN" EntitySet="TBLURUN" />
+            <End Role="TBLURUNHAREKET" EntitySet="TBLURUNHAREKET" />
           </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -675,6 +703,7 @@
           <NavigationProperty Name="TBLBIRIM" Relationship="Self.FK_TBLURUN_TBLBIRIM" FromRole="TBLURUN" ToRole="TBLBIRIM" />
           <NavigationProperty Name="TBLDURUM" Relationship="Self.FK_TBLURUN_TBLDURUM" FromRole="TBLURUN" ToRole="TBLDURUM" />
           <NavigationProperty Name="TBLURUNGRUP" Relationship="Self.FK_TBLURUN_TBLURUNGRUP" FromRole="TBLURUN" ToRole="TBLURUNGRUP" />
+          <NavigationProperty Name="TBLURUNHAREKET" Relationship="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN" FromRole="TBLURUN" ToRole="TBLURUNHAREKET" />
         </EntityType>
         <EntityType Name="TBLURUNGRUP">
           <Key>
@@ -971,6 +1000,11 @@
             <End Role="iller" EntitySet="iller" />
             <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
           </AssociationSet>
+          <EntitySet Name="TBLURUNHAREKET" EntityType="DbOtelModel.TBLURUNHAREKET" />
+          <AssociationSet Name="FK_TBLURUNHAREKET_TBLURUN" Association="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN">
+            <End Role="TBLURUN" EntitySet="TBLURUN" />
+            <End Role="TBLURUNHAREKET" EntitySet="TBLURUNHAREKET" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="ilceler">
           <Key>
@@ -1024,6 +1058,30 @@
             </Principal>
             <Dependent Role="TBLMISAFIR">
               <PropertyRef Name="SEHIR" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TBLURUNHAREKET">
+          <Key>
+            <PropertyRef Name="HAREKETID" />
+          </Key>
+          <Property Name="HAREKETID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="URUN" Type="Int32" />
+          <Property Name="HAREKETTURU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MIKTAR" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TARIH" Type="DateTime" Precision="0" />
+          <Property Name="ACIKLAMA" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TBLURUN" Relationship="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN" FromRole="TBLURUNHAREKET" ToRole="TBLURUN" />
+        </EntityType>
+        <Association Name="FK_TBLURUNHAREKET_TBLURUN">
+          <End Type="DbOtelModel.TBLURUN" Role="TBLURUN" Multiplicity="0..1" />
+          <End Type="DbOtelModel.TBLURUNHAREKET" Role="TBLURUNHAREKET" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TBLURUN">
+              <PropertyRef Name="URUNID" />
+            </Principal>
+            <Dependent Role="TBLURUNHAREKET">
+              <PropertyRef Name="URUN" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1214,6 +1272,18 @@
               <MappingFragment StoreEntitySet="iller">
                 <ScalarProperty Name="sehir" ColumnName="sehir" />
                 <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TBLURUNHAREKET">
+            <EntityTypeMapping TypeName="DbOtelModel.TBLURUNHAREKET">
+              <MappingFragment StoreEntitySet="TBLURUNHAREKET">
+                <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+                <ScalarProperty Name="TARIH" ColumnName="TARIH" />
+                <ScalarProperty Name="MIKTAR" ColumnName="MIKTAR" />
+                <ScalarProperty Name="HAREKETTURU" ColumnName="HAREKETTURU" />
+                <ScalarProperty Name="URUN" ColumnName="URUN" />
+                <ScalarProperty Name="HAREKETID" ColumnName="HAREKETID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -33,5 +33,12 @@ namespace OtelProjesi.Formlar.Ürün
                                            x.TOPLAM
                                        }).ToList();
         }
+
+        private void gridView1_DoubleClick(object sender, EventArgs e)
+        {
+            FrmUrunKart frm = new FrmUrunKart();
+            frm.id = int.Parse(gridView1.GetFocusedRowCellValue("URUNID").ToString());
+            frm.Show();
+        }
     }
 }

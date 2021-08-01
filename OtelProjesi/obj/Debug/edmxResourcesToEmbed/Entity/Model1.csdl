@@ -176,6 +176,7 @@
     <NavigationProperty Name="TBLBIRIM" Relationship="Self.FK_TBLURUN_TBLBIRIM" FromRole="TBLURUN" ToRole="TBLBIRIM" />
     <NavigationProperty Name="TBLDURUM" Relationship="Self.FK_TBLURUN_TBLDURUM" FromRole="TBLURUN" ToRole="TBLDURUM" />
     <NavigationProperty Name="TBLURUNGRUP" Relationship="Self.FK_TBLURUN_TBLURUNGRUP" FromRole="TBLURUN" ToRole="TBLURUNGRUP" />
+    <NavigationProperty Name="TBLURUNHAREKET" Relationship="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN" FromRole="TBLURUN" ToRole="TBLURUNHAREKET" />
   </EntityType>
   <EntityType Name="TBLURUNGRUP">
     <Key>
@@ -472,6 +473,11 @@
       <End Role="iller" EntitySet="iller" />
       <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
     </AssociationSet>
+    <EntitySet Name="TBLURUNHAREKET" EntityType="DbOtelModel.TBLURUNHAREKET" />
+    <AssociationSet Name="FK_TBLURUNHAREKET_TBLURUN" Association="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN">
+      <End Role="TBLURUN" EntitySet="TBLURUN" />
+      <End Role="TBLURUNHAREKET" EntitySet="TBLURUNHAREKET" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ilceler">
     <Key>
@@ -525,6 +531,30 @@
       </Principal>
       <Dependent Role="TBLMISAFIR">
         <PropertyRef Name="SEHIR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TBLURUNHAREKET">
+    <Key>
+      <PropertyRef Name="HAREKETID" />
+    </Key>
+    <Property Name="HAREKETID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="URUN" Type="Int32" />
+    <Property Name="HAREKETTURU" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MIKTAR" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="TARIH" Type="DateTime" Precision="0" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="2500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TBLURUN" Relationship="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN" FromRole="TBLURUNHAREKET" ToRole="TBLURUN" />
+  </EntityType>
+  <Association Name="FK_TBLURUNHAREKET_TBLURUN">
+    <End Type="DbOtelModel.TBLURUN" Role="TBLURUN" Multiplicity="0..1" />
+    <End Type="DbOtelModel.TBLURUNHAREKET" Role="TBLURUNHAREKET" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLURUN">
+        <PropertyRef Name="URUNID" />
+      </Principal>
+      <Dependent Role="TBLURUNHAREKET">
+        <PropertyRef Name="URUN" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
