@@ -45,6 +45,8 @@
             this.btnPersonelListesi = new DevExpress.XtraBars.BarButtonItem();
             this.btnPersonelKart = new DevExpress.XtraBars.BarButtonItem();
             this.btnMisafirKart = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUrunListesi = new DevExpress.XtraBars.BarButtonItem();
+            this.btnUrunKarti = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -82,9 +84,11 @@
             this.btnUrunGrupTanim,
             this.btnPersonelListesi,
             this.btnPersonelKart,
-            this.btnMisafirKart});
+            this.btnMisafirKart,
+            this.btnUrunListesi,
+            this.btnUrunKarti});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.MaxItemId = 16;
+            this.ribbonControl1.MaxItemId = 18;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.PageCategoryAlignment = DevExpress.XtraBars.Ribbon.RibbonPageCategoryAlignment.Left;
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -106,8 +110,8 @@
             // 
             this.btnMisafirListesi.Caption = "Misafir Listesi";
             this.btnMisafirListesi.Id = 1;
-            this.btnMisafirListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.btnMisafirListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.btnMisafirListesi.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMisafirListesi.ImageOptions.Image")));
+            this.btnMisafirListesi.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMisafirListesi.ImageOptions.LargeImage")));
             this.btnMisafirListesi.Name = "btnMisafirListesi";
             this.btnMisafirListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMisafirListesi_ItemClick);
             // 
@@ -228,6 +232,24 @@
             this.btnMisafirKart.Name = "btnMisafirKart";
             this.btnMisafirKart.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnMisafirKart_ItemClick);
             // 
+            // btnUrunListesi
+            // 
+            this.btnUrunListesi.Caption = "Ürün Listesi";
+            this.btnUrunListesi.Id = 16;
+            this.btnUrunListesi.ImageOptions.Image = global::OtelProjesi.Properties.Resources.boproductgroup_16x16;
+            this.btnUrunListesi.ImageOptions.LargeImage = global::OtelProjesi.Properties.Resources.boproductgroup_32x321;
+            this.btnUrunListesi.Name = "btnUrunListesi";
+            this.btnUrunListesi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunListesi_ItemClick);
+            // 
+            // btnUrunKarti
+            // 
+            this.btnUrunKarti.Caption = "Ürün Kartı";
+            this.btnUrunKarti.Id = 17;
+            this.btnUrunKarti.ImageOptions.Image = global::OtelProjesi.Properties.Resources.boorderitem_16x16;
+            this.btnUrunKarti.ImageOptions.LargeImage = global::OtelProjesi.Properties.Resources.boorderitem_32x32;
+            this.btnUrunKarti.Name = "btnUrunKarti";
+            this.btnUrunKarti.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnUrunKarti_ItemClick);
+            // 
             // ribbonPage1
             // 
             this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -274,8 +296,9 @@
             // 
             // ribbonPageGroup4
             // 
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnUrunListesi);
+            this.ribbonPageGroup4.ItemLinks.Add(this.btnUrunKarti);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // ribbonPage5
             // 
@@ -383,6 +406,8 @@
         private DevExpress.XtraBars.BarButtonItem btnPersonelKart;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager xtraTabbedMdiManager1;
         private DevExpress.XtraBars.BarButtonItem btnMisafirKart;
+        private DevExpress.XtraBars.BarButtonItem btnUrunListesi;
+        private DevExpress.XtraBars.BarButtonItem btnUrunKarti;
     }
 }
 

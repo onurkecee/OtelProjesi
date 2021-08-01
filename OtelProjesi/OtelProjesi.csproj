@@ -217,6 +217,18 @@
     <Compile Include="Formlar\Tanımlamalar\FrmUrunGrup.Designer.cs">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunKart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunKart.Designer.cs">
+      <DependentUpon>FrmUrunKart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunListesi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formlar\Ürün\FrmUrunListesi.Designer.cs">
+      <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Repository.cs" />
@@ -265,6 +277,12 @@
     <EmbeddedResource Include="Formlar\Tanımlamalar\FrmUrunGrup.resx">
       <DependentUpon>FrmUrunGrup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ürün\FrmUrunKart.resx">
+      <DependentUpon>FrmUrunKart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formlar\Ürün\FrmUrunListesi.resx">
+      <DependentUpon>FrmUrunListesi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -308,6 +326,17 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\status_32x32.png" />
+    <None Include="Resources\gaugestylethreeforthcircular_32x32.png" />
+    <None Include="Resources\showproduct_32x32.png" />
+    <None Include="Resources\calculatenow_32x32.png" />
+    <None Include="Resources\percentstyle  copy_32x32.png" />
+    <None Include="Resources\boproductgroup_32x322.png" />
+    <None Include="Resources\boorderitem_16x16.png" />
+    <None Include="Resources\boorderitem_32x32.png" />
+    <None Include="Resources\boproductgroup_16x16.png" />
+    <None Include="Resources\boproductgroup_32x321.png" />
+    <None Include="Resources\boproductgroup_32x32.png" />
     <None Include="Resources\usergroup_16x16.png" />
     <None Include="Resources\usergroup_32x32.png" />
     <None Include="Resources\home_32x32.png" />
