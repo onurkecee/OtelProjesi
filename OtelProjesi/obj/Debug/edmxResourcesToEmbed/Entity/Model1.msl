@@ -197,5 +197,21 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TBLREZERVASYON">
+      <EntityTypeMapping TypeName="DbOtelModel.TBLREZERVASYON">
+        <MappingFragment StoreEntitySet="TBLREZERVASYON">
+          <ScalarProperty Name="DURUM" ColumnName="DURUM" />
+          <ScalarProperty Name="ACIKLAMA" ColumnName="ACIKLAMA" />
+          <ScalarProperty Name="TELEFON" ColumnName="TELEFON" />
+          <ScalarProperty Name="REZERVASYONADSOYAD" ColumnName="REZERVASYONADSOYAD" />
+          <ScalarProperty Name="ODA" ColumnName="ODA" />
+          <ScalarProperty Name="KISISAYISI" ColumnName="KISISAYISI" />
+          <ScalarProperty Name="CIKISTARIH" ColumnName="CIKISTARIH" />
+          <ScalarProperty Name="GIRISTARIH" ColumnName="GIRISTARIH" />
+          <ScalarProperty Name="MISAFIR" ColumnName="MISAFIR" />
+          <ScalarProperty Name="REZERVASYONID" ColumnName="REZERVASYONID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

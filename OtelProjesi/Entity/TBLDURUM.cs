@@ -28,6 +28,7 @@ namespace OtelProjesi.Entity
             this.TBLTELEFON = new HashSet<TBLTELEFON>();
             this.TBLURUN = new HashSet<TBLURUN>();
             this.TBLURUNGRUP = new HashSet<TBLURUNGRUP>();
+            this.TBLREZERVASYON = new HashSet<TBLREZERVASYON>();
         }
     
         public int DURUMID { get; set; }
@@ -55,5 +56,7 @@ namespace OtelProjesi.Entity
         public virtual ICollection<TBLURUN> TBLURUN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TBLURUNGRUP> TBLURUNGRUP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLREZERVASYON> TBLREZERVASYON { get; set; }
     }
 }

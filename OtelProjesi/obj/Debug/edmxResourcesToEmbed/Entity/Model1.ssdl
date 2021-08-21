@@ -131,6 +131,21 @@
     <Property Name="YETKI" Type="char" MaxLength="1" />
     <Property Name="DURUM" Type="int" />
   </EntityType>
+  <EntityType Name="TBLREZERVASYON">
+    <Key>
+      <PropertyRef Name="REZERVASYONID" />
+    </Key>
+    <Property Name="REZERVASYONID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MISAFIR" Type="int" />
+    <Property Name="GIRISTARIH" Type="date" />
+    <Property Name="CIKISTARIH" Type="date" />
+    <Property Name="KISISAYISI" Type="char" MaxLength="1" />
+    <Property Name="ODA" Type="int" />
+    <Property Name="REZERVASYONADSOYAD" Type="nvarchar" MaxLength="50" />
+    <Property Name="TELEFON" Type="nvarchar" MaxLength="50" />
+    <Property Name="ACIKLAMA" Type="nvarchar" MaxLength="500" />
+    <Property Name="DURUM" Type="int" />
+  </EntityType>
   <EntityType Name="TBLTELEFON">
     <Key>
       <PropertyRef Name="TELEFONID" />
@@ -347,6 +362,42 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_TBLREZERVASYON_TBLDURUM">
+    <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
+    <End Role="TBLREZERVASYON" Type="Self.TBLREZERVASYON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLREZERVASYON">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLREZERVASYON_TBLMISAFIR">
+    <End Role="TBLMISAFIR" Type="Self.TBLMISAFIR" Multiplicity="0..1" />
+    <End Role="TBLREZERVASYON" Type="Self.TBLREZERVASYON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMISAFIR">
+        <PropertyRef Name="MISAFIRID" />
+      </Principal>
+      <Dependent Role="TBLREZERVASYON">
+        <PropertyRef Name="MISAFIR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLREZERVASYON_TBLODA">
+    <End Role="TBLODA" Type="Self.TBLODA" Multiplicity="0..1" />
+    <End Role="TBLREZERVASYON" Type="Self.TBLREZERVASYON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLODA">
+        <PropertyRef Name="ODAID" />
+      </Principal>
+      <Dependent Role="TBLREZERVASYON">
+        <PropertyRef Name="ODA" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TBLTELEFON_TBLDURUM">
     <End Role="TBLDURUM" Type="Self.TBLDURUM" Multiplicity="0..1" />
     <End Role="TBLTELEFON" Type="Self.TBLTELEFON" Multiplicity="*" />
@@ -432,6 +483,7 @@
     <EntitySet Name="TBLMISAFIR" EntityType="Self.TBLMISAFIR" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLODA" EntityType="Self.TBLODA" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLPERSONEL" EntityType="Self.TBLPERSONEL" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TBLREZERVASYON" EntityType="Self.TBLREZERVASYON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLTELEFON" EntityType="Self.TBLTELEFON" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLULKE" EntityType="Self.TBLULKE" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TBLURUN" EntityType="Self.TBLURUN" Schema="dbo" store:Type="Tables" />
@@ -492,6 +544,18 @@
     <AssociationSet Name="FK_TBLPERSONEL_TBLGOREV" Association="Self.FK_TBLPERSONEL_TBLGOREV">
       <End Role="TBLGOREV" EntitySet="TBLGOREV" />
       <End Role="TBLPERSONEL" EntitySet="TBLPERSONEL" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLREZERVASYON_TBLDURUM" Association="Self.FK_TBLREZERVASYON_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLREZERVASYON" EntitySet="TBLREZERVASYON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLREZERVASYON_TBLMISAFIR" Association="Self.FK_TBLREZERVASYON_TBLMISAFIR">
+      <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+      <End Role="TBLREZERVASYON" EntitySet="TBLREZERVASYON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLREZERVASYON_TBLODA" Association="Self.FK_TBLREZERVASYON_TBLODA">
+      <End Role="TBLODA" EntitySet="TBLODA" />
+      <End Role="TBLREZERVASYON" EntitySet="TBLREZERVASYON" />
     </AssociationSet>
     <AssociationSet Name="FK_TBLTELEFON_TBLDURUM" Association="Self.FK_TBLTELEFON_TBLDURUM">
       <End Role="TBLDURUM" EntitySet="TBLDURUM" />

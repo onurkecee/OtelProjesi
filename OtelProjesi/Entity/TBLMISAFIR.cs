@@ -14,6 +14,12 @@ namespace OtelProjesi.Entity
     
     public partial class TBLMISAFIR
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TBLMISAFIR()
+        {
+            this.TBLREZERVASYON = new HashSet<TBLREZERVASYON>();
+        }
+    
         public int MISAFIRID { get; set; }
         public string ADSOYAD { get; set; }
         public string TC { get; set; }
@@ -31,5 +37,7 @@ namespace OtelProjesi.Entity
         public virtual TBLDURUM TBLDURUM { get; set; }
         public virtual ilceler ilceler { get; set; }
         public virtual iller iller { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLREZERVASYON> TBLREZERVASYON { get; set; }
     }
 }

@@ -49,6 +49,7 @@
     <NavigationProperty Name="TBLTELEFON" Relationship="Self.FK_TBLTELEFON_TBLDURUM" FromRole="TBLDURUM" ToRole="TBLTELEFON" />
     <NavigationProperty Name="TBLURUN" Relationship="Self.FK_TBLURUN_TBLDURUM" FromRole="TBLDURUM" ToRole="TBLURUN" />
     <NavigationProperty Name="TBLURUNGRUP" Relationship="Self.FK_TBLURUNGRUP_TBLDURUM" FromRole="TBLDURUM" ToRole="TBLURUNGRUP" />
+    <NavigationProperty Name="TBLREZERVASYON" Relationship="DbOtelModel.FK_TBLREZERVASYON_TBLDURUM" FromRole="TBLDURUM" ToRole="TBLREZERVASYON" />
   </EntityType>
   <EntityType Name="TBLGOREV">
     <Key>
@@ -106,6 +107,7 @@
     <Property Name="ILCE" Type="Int32" />
     <NavigationProperty Name="ilceler" Relationship="DbOtelModel.FK_TBLMISAFIR_ilceler" FromRole="TBLMISAFIR" ToRole="ilceler" />
     <NavigationProperty Name="iller" Relationship="DbOtelModel.FK_TBLMISAFIR_iller" FromRole="TBLMISAFIR" ToRole="iller" />
+    <NavigationProperty Name="TBLREZERVASYON" Relationship="DbOtelModel.FK_TBLREZERVASYON_TBLMISAFIR" FromRole="TBLMISAFIR" ToRole="TBLREZERVASYON" />
   </EntityType>
   <EntityType Name="TBLODA">
     <Key>
@@ -119,6 +121,7 @@
     <Property Name="TELEFON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="DURUM" Type="Int32" />
     <NavigationProperty Name="TBLDURUM" Relationship="Self.FK_TBLODA_TBLDURUM" FromRole="TBLODA" ToRole="TBLDURUM" />
+    <NavigationProperty Name="TBLREZERVASYON" Relationship="DbOtelModel.FK_TBLREZERVASYON_TBLODA" FromRole="TBLODA" ToRole="TBLREZERVASYON" />
   </EntityType>
   <EntityType Name="TBLPERSONEL">
     <Key>
@@ -478,6 +481,19 @@
       <End Role="TBLURUN" EntitySet="TBLURUN" />
       <End Role="TBLURUNHAREKET" EntitySet="TBLURUNHAREKET" />
     </AssociationSet>
+    <EntitySet Name="TBLREZERVASYON" EntityType="DbOtelModel.TBLREZERVASYON" />
+    <AssociationSet Name="FK_TBLREZERVASYON_TBLDURUM" Association="DbOtelModel.FK_TBLREZERVASYON_TBLDURUM">
+      <End Role="TBLDURUM" EntitySet="TBLDURUM" />
+      <End Role="TBLREZERVASYON" EntitySet="TBLREZERVASYON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLREZERVASYON_TBLMISAFIR" Association="DbOtelModel.FK_TBLREZERVASYON_TBLMISAFIR">
+      <End Role="TBLMISAFIR" EntitySet="TBLMISAFIR" />
+      <End Role="TBLREZERVASYON" EntitySet="TBLREZERVASYON" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TBLREZERVASYON_TBLODA" Association="DbOtelModel.FK_TBLREZERVASYON_TBLODA">
+      <End Role="TBLODA" EntitySet="TBLODA" />
+      <End Role="TBLREZERVASYON" EntitySet="TBLREZERVASYON" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="ilceler">
     <Key>
@@ -555,6 +571,60 @@
       </Principal>
       <Dependent Role="TBLURUNHAREKET">
         <PropertyRef Name="URUN" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TBLREZERVASYON">
+    <Key>
+      <PropertyRef Name="REZERVASYONID" />
+    </Key>
+    <Property Name="REZERVASYONID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MISAFIR" Type="Int32" />
+    <Property Name="GIRISTARIH" Type="DateTime" Precision="0" />
+    <Property Name="CIKISTARIH" Type="DateTime" Precision="0" />
+    <Property Name="KISISAYISI" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="ODA" Type="Int32" />
+    <Property Name="REZERVASYONADSOYAD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TELEFON" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ACIKLAMA" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DURUM" Type="Int32" />
+    <NavigationProperty Name="TBLDURUM" Relationship="DbOtelModel.FK_TBLREZERVASYON_TBLDURUM" FromRole="TBLREZERVASYON" ToRole="TBLDURUM" />
+    <NavigationProperty Name="TBLMISAFIR" Relationship="DbOtelModel.FK_TBLREZERVASYON_TBLMISAFIR" FromRole="TBLREZERVASYON" ToRole="TBLMISAFIR" />
+    <NavigationProperty Name="TBLODA" Relationship="DbOtelModel.FK_TBLREZERVASYON_TBLODA" FromRole="TBLREZERVASYON" ToRole="TBLODA" />
+  </EntityType>
+  <Association Name="FK_TBLREZERVASYON_TBLDURUM">
+    <End Type="DbOtelModel.TBLDURUM" Role="TBLDURUM" Multiplicity="0..1" />
+    <End Type="DbOtelModel.TBLREZERVASYON" Role="TBLREZERVASYON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLDURUM">
+        <PropertyRef Name="DURUMID" />
+      </Principal>
+      <Dependent Role="TBLREZERVASYON">
+        <PropertyRef Name="DURUM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLREZERVASYON_TBLMISAFIR">
+    <End Type="DbOtelModel.TBLMISAFIR" Role="TBLMISAFIR" Multiplicity="0..1" />
+    <End Type="DbOtelModel.TBLREZERVASYON" Role="TBLREZERVASYON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLMISAFIR">
+        <PropertyRef Name="MISAFIRID" />
+      </Principal>
+      <Dependent Role="TBLREZERVASYON">
+        <PropertyRef Name="MISAFIR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TBLREZERVASYON_TBLODA">
+    <End Type="DbOtelModel.TBLODA" Role="TBLODA" Multiplicity="0..1" />
+    <End Type="DbOtelModel.TBLREZERVASYON" Role="TBLREZERVASYON" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TBLODA">
+        <PropertyRef Name="ODAID" />
+      </Principal>
+      <Dependent Role="TBLREZERVASYON">
+        <PropertyRef Name="ODA" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

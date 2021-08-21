@@ -114,3 +114,8 @@ C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunGirisHareket.resources
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunCikisHareket.resources
 C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Ürün.FrmUrunHareketTanimi.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Rezervasyon.FrmRezervasyonKarti.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Rezervasyon.FrmAktifRezervasyonlar.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Rezervasyon.FrmGecmisRezervasyonlar.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Rezervasyon.FrmIptalRezervasyon.resources
+C:\Users\Onur\source\repos\OtelProjesi\OtelProjesi\obj\Debug\OtelProjesi.Formlar.Rezervasyon.FrmTumRezervasyonlar.resources

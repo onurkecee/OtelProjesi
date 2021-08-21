@@ -14,6 +14,12 @@ namespace OtelProjesi.Entity
     
     public partial class TBLODA
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public TBLODA()
+        {
+            this.TBLREZERVASYON = new HashSet<TBLREZERVASYON>();
+        }
+    
         public int ODAID { get; set; }
         public string ODANUMARASI { get; set; }
         public string KAT { get; set; }
@@ -23,5 +29,7 @@ namespace OtelProjesi.Entity
         public Nullable<int> DURUM { get; set; }
     
         public virtual TBLDURUM TBLDURUM { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TBLREZERVASYON> TBLREZERVASYON { get; set; }
     }
 }

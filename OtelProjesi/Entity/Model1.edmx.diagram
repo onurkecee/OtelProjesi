@@ -42,6 +42,10 @@
         <AssociationConnector Association="DbOtelModel.FK_TBLMISAFIR_iller" />
         <EntityTypeShape EntityType="DbOtelModel.TBLURUNHAREKET" Width="1.5" PointX="7.5" PointY="15.5" />
         <AssociationConnector Association="DbOtelModel.FK_TBLURUNHAREKET_TBLURUN" />
+        <EntityTypeShape EntityType="DbOtelModel.TBLREZERVASYON" Width="1.5" PointX="5.25" PointY="18.375" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLREZERVASYON_TBLDURUM" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLREZERVASYON_TBLMISAFIR" />
+        <AssociationConnector Association="DbOtelModel.FK_TBLREZERVASYON_TBLODA" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
